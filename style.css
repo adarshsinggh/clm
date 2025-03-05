@@ -281,63 +281,160 @@ body {
 }
 
 /* Key Highlights Section */
+/* Key Highlights Section */
 .key-highlights-section {
     background-color: white;
     padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    color: #014bad;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
 }
 
 .pyramid-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 .pyramid-content {
     position: relative;
     z-index: 1;
+    min-height: 600px;
 }
 
-.pyramid-shape {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background: linear-gradient(180deg, #e3e9ff 0%, #b1c5ff 100%);
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    z-index: -1;
+.highlight-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .highlight-item {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    font-weight: 500;
-    color: var(--primary-color);
+    gap: 12px;
+    color: #014bad;
+    font-weight: 600;
+    font-size: 1.25rem;
+    width: 42%;
 }
 
 .highlight-item.left {
-    margin-right: 50%;
     justify-content: flex-start;
+    padding-right: 20px;
 }
 
 .highlight-item.right {
-    margin-left: 50%;
     justify-content: flex-end;
+    padding-left: 20px;
 }
 
-.check-icon {
-    width: 24px;
-    height: 24px;
-    background-color: var(--primary-color);
-    color: white;
+.check-circle {
+    min-width: 32px;
+    height: 32px;
+    background-color: #014bad;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(1, 75, 173, 0.3);
+}
+
+.highlight-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: rgba(1, 75, 173, 0.4);
+    width: 16%;
+}
+
+.pyramid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background: linear-gradient(180deg, 
+        #c5dbff 0%,
+        #a4c7ff 25%,
+        #7da7ff 50%,
+        #4c82ff 75%,
+        #014bad 100%
+    );
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+    opacity: 0.15;
+}
+
+@media (max-width: 1199.98px) {
+    .pyramid {
+        width: 500px;
+        height: 420px;
+    }
+    
+    .highlight-item {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .pyramid {
+        width: 400px;
+        height: 340px;
+    }
+
+    .highlight-item {
+        font-size: 1rem;
+    }
+
+    .check-circle {
+        min-width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .highlight-row {
+        flex-direction: column;
+        gap: 25px;
+        margin: 35px 0;
+    }
+
+    .highlight-item {
+        width: 100%;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .highlight-line {
+        display: none;
+    }
+
+    .pyramid {
+        width: 300px;
+        height: 250px;
+    }
 }
 
 /* Projects Section */
